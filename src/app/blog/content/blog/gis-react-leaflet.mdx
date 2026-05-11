@@ -1,0 +1,44 @@
+---
+title: "Building Interactive GIS Maps with React & Leaflet"
+summary: "A practical guide to integrating Leaflet into your React app — from basic tiles to spatial filtering and custom overlays."
+date: "2025-04-02"
+tags: ["GIS", "React", "Leaflet"]
+published: true
+---
+
+## Why Leaflet?
+
+When ArcGIS API is overkill and you need a lightweight, open-source mapping solution — Leaflet is the answer. With `react-leaflet`, integrating it into Next.js is straightforward.
+
+## Setup
+
+```bash
+npm install leaflet react-leaflet
+npm install -D @types/leaflet
+```
+
+## Basic Map Component
+
+```tsx
+"use client";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+
+export const GISMap = () => (
+  <MapContainer center={[30.06, 31.24]} zoom={12} className="h-96 w-full rounded-xl">
+    <TileLayer
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      attribution="© OpenStreetMap contributors"
+    />
+    <Marker position={[30.06, 31.24]}>
+      <Popup>Cairo, Egypt</Popup>
+    </Marker>
+  </MapContainer>
+);
+```
+
+## Spatial Filtering
+
+The real power comes from combining map interactions with data queries — filtering features by bounding box, radius, or custom geometry.
+
+This is exactly what I built at the Egyptian Military Survey Authority for national infrastructure projects.

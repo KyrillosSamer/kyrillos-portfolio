@@ -1,0 +1,46 @@
+---
+title: "Clean Architecture in React — Why It Matters"
+summary: "How applying Clean Architecture principles to your React projects leads to more maintainable, scalable, and testable codebases."
+date: "2025-03-10"
+tags: ["React", "Architecture", "Clean Code"]
+published: true
+---
+
+## The Problem with Most React Projects
+
+Most React projects start clean. After six months, they become a maze of `useEffect` spaghetti and business logic buried inside components.
+
+Clean Architecture solves this by enforcing strict **separation of concerns** across layers.
+
+## The Four Layers
+
+### 1. Entities
+Pure business logic — no framework dependencies. TypeScript types, domain models, and core rules live here.
+
+### 2. Use Cases
+Application-specific logic. Think: `createOrder`, `filterProjects`, `authenticateUser`.
+
+### 3. Interface Adapters
+This is where React lives. Components, hooks, and state management adapt data from use cases into UI.
+
+### 4. Infrastructure
+API calls, localStorage, third-party libraries — all isolated here.
+
+## Practical Example
+
+```typescript
+//  Business logic inside component — wrong
+const ProductList = () => {
+  const discounted = products.filter(p => p.price * 0.8 < 100);
+  return <ul>{discounted.map(...)}</ul>;
+};
+
+// Logic in entity layer — correct
+// entities/product/lib/filterDiscounted.ts
+export const filterDiscounted = (products: Product[], maxPrice: number) =>
+  products.filter(p => p.price * 0.8 < maxPrice);
+```
+
+## Why It's Worth It
+
+The extra folder structure pays off when your team scales, requirements change, or you need to swap React for something else — your business logic stays untouched.
