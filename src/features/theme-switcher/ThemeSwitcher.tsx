@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ROUTES } from "@/shared/config/routes";
 import { PERSONAL_INFO } from "@/shared/config/constants";
-import { ThemeSwitcher } from "@/features/theme-switcher/ThemeSwitcher";
 
 const navLinks = [
   { label: "Home", href: ROUTES.home },
