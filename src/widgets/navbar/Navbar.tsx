@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ROUTES } from "@/shared/config/routes";
 import { PERSONAL_INFO } from "@/shared/config/constants";
-import { useTheme } from "@/shared/hooks/useTheme";
+import { ThemeSwitcher } from "@/features/theme-switcher/ThemeSwitcher";
 
 const navLinks = [
   { label: "Home", href: ROUTES.home },
@@ -15,38 +15,19 @@ const navLinks = [
   { label: "Contact", href: ROUTES.contact },
 ];
 
-const SunIcon = () => (
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"
-    />
-  </svg>
-);
-
-const MoonIcon = () => (
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
-    />
-  </svg>
-);
-
 export const Navbar = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggle, mounted } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -62,6 +43,7 @@ export const Navbar = () => {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        
         <Link href={ROUTES.home} className="flex items-center">
           <img
             src="/assets/ks.png"
@@ -92,17 +74,7 @@ export const Navbar = () => {
         </ul>
 
         <div className="hidden md:flex items-center gap-2">
-          {mounted && (
-            <button
-              onClick={toggle}
-              aria-label="Toggle theme"
-              className="w-9 h-9 rounded-lg border border-gray-800 flex items-center 
-                         justify-center text-gray-400 hover:text-white 
-                         hover:border-gray-600 transition-all duration-200"
-            >
-              {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-            </button>
-          )}
+          <ThemeSwitcher />
 
           <a
             href={`mailto:${PERSONAL_INFO.email}`}
@@ -115,16 +87,7 @@ export const Navbar = () => {
         </div>
 
         <div className="md:hidden flex items-center gap-2">
-          {mounted && (
-            <button
-              onClick={toggle}
-              aria-label="Toggle theme"
-              className="w-9 h-9 rounded-lg border border-gray-800 flex items-center 
-                         justify-center text-gray-400 hover:text-white transition-all"
-            >
-              {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-            </button>
-          )}
+          <ThemeSwitcher />
 
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
