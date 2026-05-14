@@ -7,6 +7,9 @@ import { ROUTES } from "@/shared/config/routes";
 import { PERSONAL_INFO } from "@/shared/config/constants";
 import { ThemeSwitcher } from "@/features/theme-switcher/ThemeSwitcher";
 
+/* =========================================================
+   NAVIGATION LINKS CONFIG
+   ========================================================= */
 const navLinks = [
   { label: "Home", href: ROUTES.home },
   { label: "About", href: ROUTES.about },
@@ -16,10 +19,17 @@ const navLinks = [
 ];
 
 export const Navbar = () => {
+
+  /* =========================================================
+     ROUTER & UI STATE
+     ========================================================= */
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  /* =========================================================
+     HANDLE SCROLL STATE (SHADOW / BACKGROUND CHANGE)
+     ========================================================= */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
 
@@ -30,6 +40,9 @@ export const Navbar = () => {
     };
   }, []);
 
+  /* =========================================================
+     CLOSE MOBILE MENU ON ROUTE CHANGE
+     ========================================================= */
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
@@ -42,8 +55,13 @@ export const Navbar = () => {
           : "bg-transparent py-5"
       }`}
     >
+
+      {/* =========================================================
+         NAVBAR CONTAINER
+         ========================================================= */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
+
+        {/* ================= LOGO ================= */}
         <Link href={ROUTES.home} className="flex items-center">
           <img
             src="/assets/ks.png"
@@ -52,6 +70,7 @@ export const Navbar = () => {
           />
         </Link>
 
+        {/* ================= DESKTOP NAV LINKS ================= */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map(({ label, href }) => {
             const isActive = pathname === href;
@@ -73,9 +92,13 @@ export const Navbar = () => {
           })}
         </ul>
 
+        {/* ================= DESKTOP ACTIONS ================= */}
         <div className="hidden md:flex items-center gap-2">
+
+          {/* THEME SWITCHER */}
           <ThemeSwitcher />
 
+          {/* HIRE ME BUTTON */}
           <a
             href={`mailto:${PERSONAL_INFO.email}`}
             className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 
@@ -86,9 +109,13 @@ export const Navbar = () => {
           </a>
         </div>
 
+        {/* ================= MOBILE ACTIONS ================= */}
         <div className="md:hidden flex items-center gap-2">
+
+          {/* THEME SWITCHER */}
           <ThemeSwitcher />
 
+          {/* HAMBURGER MENU BUTTON */}
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
             className="text-gray-400 hover:text-white p-2"
@@ -115,8 +142,12 @@ export const Navbar = () => {
         </div>
       </nav>
 
+      {/* =========================================================
+         MOBILE MENU
+         ========================================================= */}
       {menuOpen && (
         <div className="md:hidden bg-gray-950/95 backdrop-blur border-t border-gray-800 px-4 py-4 space-y-1">
+
           {navLinks.map(({ label, href }) => {
             const isActive = pathname === href;
 
@@ -135,6 +166,7 @@ export const Navbar = () => {
             );
           })}
 
+          {/* MOBILE HIRE ME */}
           <a
             href={`mailto:${PERSONAL_INFO.email}`}
             className="block mt-2 px-4 py-2.5 rounded-lg text-center text-sm text-white 

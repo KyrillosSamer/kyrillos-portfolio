@@ -62,6 +62,19 @@ html.light body {
    LIGHT MODE — TAILWIND CLASS OVERRIDES
    ============================================================ */
 
+   /* Blog filter buttons fix */
+html.light .blog-filter-btn {
+  background-color: #ffffff !important;
+  color: #4338ca !important;
+  border: 1px solid #ddd6fe !important;
+}
+
+html.light .blog-filter-btn:hover {
+  background-color: #f5f3ff !important;
+  color: #1e1b4b !important;
+  border-color: #c4b5fd !important;
+}
+
 /* Backgrounds */
 html.light .bg-gray-900\/80,
 html.light .bg-gray-900\/60,

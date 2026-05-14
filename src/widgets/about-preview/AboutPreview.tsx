@@ -111,7 +111,7 @@ export const AboutPreview = () => {
             {/* Languages */}
             <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-6">
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-3">Languages</h3>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 {[
                   { lang: "Arabic", level: "Native", pct: 100 },
                   { lang: "English", level: "B2 – Intermediate", pct: 65 },
