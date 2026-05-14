@@ -56,7 +56,7 @@ export const BlogList = ({ posts, tags }: BlogListProps) => {
             className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200
               ${activeTag === tag
                 ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
-                : "bg-gray-900 border border-gray-800 text-gray-400 hover:text-white hover:border-gray-600"
+                : ":bg-gray-900 border border-gray-800 text-gray-400 hover:text-white hover:border-gray-600 blog-filter-btn"
               }`}
           >
             {tag}
