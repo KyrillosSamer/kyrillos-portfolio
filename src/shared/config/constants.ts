@@ -9,14 +9,14 @@ export const PERSONAL_INFO = {
   github: "https://github.com/KyrillosSamer",
   portfolio: "#",
   summary:
-    "Front-End & Geo-Spatial Developer with 2+ years of experience building map-driven applications and large-scale spatial data solutions, currently working on ERP SaaS platforms.",
+    "Front-End & Geo-Spatial Developer with 3+ years of experience building map-driven applications and large-scale spatial data solutions, currently working on ERP SaaS platforms.",
   cvUrl: "/assets/Kyrillos_Samer_CV.pdf",
 } as const;
 
 export const SKILLS = {
   frontend: ["React.js", "Next.js", "TypeScript", "JavaScript", "Redux", "TanStack Query", "Zustand", "Tailwind CSS", "Bootstrap"],
-  gis: ["ArcGIS API JS", "Leaflet", "OpenLayers", "ArcGIS Online", "ArcGIS StoryMaps", "QGIS", "Big Data Spatial"],
-  architecture: ["Clean Architecture", "Design Patterns", "Clean Code", "SaaS", "Microservices", "System Design", "ERP Systems"],
+  gis: ["ArcGIS SDK", "Leaflet", "OpenLayers", "ArcGIS Online", "ArcGIS StoryMaps", "QGIS", "Big Data Spatial"],
+  architecture: ["Clean Architecture", "Design Patterns", "Clean Code", "SaaS", "System Design", "ERP Systems"],
   databases: ["PostgreSQL", "PostGIS", "MS SQL Server", "SQLite"],
   tools: ["Git", "REST APIs", "ClickUp", "Scrum / Agile", "Python", "C++", "C#", "OOP"],
 } as const;
@@ -86,7 +86,7 @@ export const CERTIFICATIONS = [
   { title: "CS50 – Introduction to Computer Science", issuer: "Harvard University" },
   { title: "CS50x – Computer Science", issuer: "HarvardX" },
   { title: "Front-End Development (React, Redux, Zustand. Next.js, Tailwind ,Boot Strap)", issuer: "Route Academy" },
-  { title: "Gis Development (Leaflet , Open Layers , Arcgis Api for Js)", issuer: "Self-Study" },
+  { title: "Gis Development (Leaflet , Open Layers , Arcgis SDK)", issuer: "Self-Study" },
   { title: "Python Programming", issuer: "ITI – Mahara Tech" },
   { title: "PostgreSQL & PostGIS", issuer: "Self-study" },
   { title: "MS SQL Server", issuer: "ITI – Mahara Tech" },

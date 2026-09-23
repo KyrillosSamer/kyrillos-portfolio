@@ -39,8 +39,8 @@ export const AboutPreview = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
               {[
-                { value: "2+", label: "Years Exp." },
-                { value: "15+", label: "Projects" },
+                { value: "3+", label: "Years Exp." },
+                { value: "20+", label: "Projects" },
                 { value: "3", label: "Companies" },
               ].map((stat) => (
                 <div
