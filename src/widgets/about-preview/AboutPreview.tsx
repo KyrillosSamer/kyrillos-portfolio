@@ -5,8 +5,9 @@ import { ROUTES } from "@/shared/config/routes";
 const skillCategories = [
   { label: "Front-End", skills: SKILLS.frontend, color: "purple" },
   { label: "GIS & Spatial", skills: SKILLS.gis, color: "blue" },
-  { label: "Architecture", skills: SKILLS.architecture, color: "cyan" },
-  { label: "Databases", skills: SKILLS.databases, color: "green" },
+  { label: "Backend & Data", skills: SKILLS.backend, color: "green" },
+  { label: "Architecture & DevOps", skills: SKILLS.architecture, color: "cyan" },
+  { label: "Tools", skills: SKILLS.tools, color: "amber" },
 ];
 
 const colorMap: Record<string, string> = {
@@ -14,6 +15,7 @@ const colorMap: Record<string, string> = {
   blue: "border-blue-800 text-blue-300 bg-blue-950/40",
   cyan: "border-cyan-800 text-cyan-300 bg-cyan-950/50",
   green: "border-green-800 text-green-300 bg-green-950/50",
+  amber: "border-amber-800 text-amber-300 bg-amber-950/50",
 };
 
 export const AboutPreview = () => {
@@ -76,12 +78,12 @@ export const AboutPreview = () => {
             </div>
 
             {/* Education */}
-            <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-6">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-3">Education</h3>
+            <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-8">
+              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Education</h3>
               <p className="text-white font-medium">{EDUCATION.degree}</p>
-              <p className="text-purple-400 text-sm">{EDUCATION.institution}</p>
+              <p className="text-purple-400 text-sm mt-2">{EDUCATION.institution}</p>
               <p className="text-gray-500 text-xs mt-1">{EDUCATION.period} · Grade: {EDUCATION.grade}</p>
-              <p className="text-gray-400 text-xs mt-1">
+              <p className="text-gray-400 text-xs mt-4">
                 Graduation Project:{" "}
                 <span className="text-cyan-400">{EDUCATION.project}</span> · {EDUCATION.projectGrade}
               </p>

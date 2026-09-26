@@ -9,19 +9,32 @@ export const PERSONAL_INFO = {
   github: "https://github.com/KyrillosSamer",
   portfolio: "#",
   summary:
-    "Front-End & Geo-Spatial Developer with 3+ years of experience building map-driven applications and large-scale spatial data solutions, currently working on ERP SaaS platforms.",
+  "Front-End Developer with 3+ years of experience building scalable enterprise applications and SaaS platforms using React and Next.js, with strong expertise in GIS and spatial systems.",
   cvUrl: "/assets/Kyrillos_Samer_CV.pdf",
 } as const;
 
 export const SKILLS = {
   frontend: ["React.js", "Next.js", "TypeScript", "JavaScript", "Redux", "TanStack Query", "Zustand", "Tailwind CSS", "Bootstrap"],
   gis: ["ArcGIS SDK", "Leaflet", "OpenLayers", "ArcGIS Online", "ArcGIS StoryMaps", "QGIS", "Big Data Spatial"],
-  architecture: ["Clean Architecture", "Design Patterns", "Clean Code", "SaaS", "System Design", "ERP Systems"],
-  databases: ["PostgreSQL", "PostGIS", "MS SQL Server", "SQLite"],
+  backend: ["Node.js", "Express.js", "REST APIs", "JWT", "RBAC", "PostgreSQL", "PostGIS", "MS SQL Server", "SQLite"],
+  architecture: ["Clean Architecture", "SOLID", "Design Patterns", "Clean Code", "System Design", "SaaS", "ERP Systems", "Docker", "CI/CD"],
   tools: ["Git", "REST APIs", "ClickUp", "Scrum / Agile", "Python", "C++", "C#", "OOP"],
 } as const;
 
 export const EXPERIENCE = [
+  {
+    role: "Full-Stack GIS SaaS Developer",
+    company: "Real Estate SaaS – Personal Project",
+    period: "2026 – Present",
+    type: "personal",
+    bullets: [
+      "Built a multi-tenant real estate SaaS platform using Next.js, Node.js, Express.js, PostgreSQL, and PostGIS.",
+      "Developed GIS-driven property search and spatial matching using PostGIS.",
+      "Implemented REST APIs with JWT authentication and role-based access control (RBAC).",
+      "Applied Clean Architecture, SOLID principles, repository-based data access, and use-case driven business logic.",
+      "Containerized the backend infrastructure using Docker and Docker Compose.",
+    ],
+  },
   {
     role: "Front-End & GIS Developer",
     company: "BI-Tech",
